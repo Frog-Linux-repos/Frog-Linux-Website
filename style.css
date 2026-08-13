@@ -9,7 +9,7 @@
   --font-display: "Delicious Handrawn", sans-serif;
   --font-default: "Rubik", sans-serif;
 
-  font-size: 8pt;
+  font-size: 6pt;
 }
 
 body {
@@ -19,7 +19,6 @@ body {
   color: var(--color-fg);
   min-height: 100dvh;
   width: 100vw;
-  font-size: 50%;
   overflow: hidden;
 }
 
@@ -79,17 +78,17 @@ header .heading p {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
-  margin-right: 16rem;
+  margin-right: 8rem;
 }
 
 .button {
   display: block;
   width: fit-content;
   color: var(--color-fg);
-  padding: 2.5rem;
+  padding: 2rem;
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 2.5rem;
+  font-size: 2rem;
   text-decoration: none;
   border-radius: 100vh;
   transition: translate 0.1s;
@@ -98,8 +97,7 @@ header .heading p {
 }
 
 .button img {
-  height: 3rem;
-  vertical-align: middle;
+  height: 2rem;
 }
 
 .button:hover {
@@ -119,12 +117,12 @@ header .heading p {
   background-color: var(--color-button-2);
 }
 
-header .frog-blob {
+header .image-blob {
   margin: 0;
   position: absolute;
-  right: 2rem;
-  top: 6rem;
-  height: 24rem;
+  right: 1rem;
+  top: 2rem;
+  height: 12rem;
   background-color: var(--primary);
 }
 
@@ -132,14 +130,51 @@ header .blob1 {
   position: absolute;
   bottom: 0;
   right: 0;
-  height: 16rem;
+  height: 10rem;
 }
 
 header .blob2 {
   position: absolute;
   top: 0;
   left: 0;
-  height: 16rem;
+  height: 10rem;
+}
+
+@media (width >= 32rem) {
+  :root {
+    font-size: 8pt;
+  }
+
+  header {
+    padding: 2rem;
+  }
+
+  .cta {
+    margin-right: 14rem;
+  }
+
+  .button {
+    padding: 2.5rem;
+    font-size: 2.5rem;
+  }
+
+  .button img {
+    height: 2.5rem;
+  }
+
+  header .image-blob {
+    right: 2rem;
+    top: 6rem;
+    height: 24rem;
+  }
+
+  header .blob1 {
+    height: 16rem;
+  }
+
+  header .blob2 {
+    height: 16rem;
+  }
 }
 
 @media (width >= 64rem) {
@@ -151,7 +186,11 @@ header .blob2 {
     padding: 4rem;
   }
 
-  header .frog-blob {
+  .cta {
+    margin-right: 16rem;
+  }
+
+  header .image-blob {
     right: 10rem;
     top: 4rem;
     height: 28rem;
@@ -175,7 +214,7 @@ header .blob2 {
     padding: 6rem;
   }
 
-  header .frog-blob {
+  header .image-blob {
     right: 10rem;
     top: 4rem;
     height: 32rem;
