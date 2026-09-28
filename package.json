@@ -1,0 +1,36 @@
+{
+  "name": "frog-linux-website",
+  "version": "0.1.0",
+  "description": "The website for Frog Linux.",
+  "homepage": "https://github.com/Frog-Linux-repos/Frog-Linux-Website#readme",
+  "bugs": "https://github.com/Frog-Linux-repos/Frog-Linux-Website/issues",
+  "license": "MIT",
+  "author": {
+    "name": "FoxedDev",
+    "email": "foxed.dev@gmail.com",
+    "url": "https://foxed.dev/"
+  },
+  "type": "module",
+  "repository": "github:Frog-Linux-repos/Frog-Linux-Website",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "start": "node ./dist/server/entry.mjs",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^7.3.5",
+    "matter-js": "^0.20.0"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "private": "true",
+  "allowScripts": {
+    "esbuild": true
+  },
+  "devDependencies": {
+    "@types/matter-js": "^0.20.2"
+  }
+}

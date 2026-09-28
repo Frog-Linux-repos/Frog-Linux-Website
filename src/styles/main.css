@@ -1,0 +1,25 @@
+@import url("buttons.css");
+
+:root {
+  --color-text: #0d0b1b;
+  --color-bg: #e4fdff;
+  --color-primary: #808ac9;
+  --color-secondary: #dee2fe;
+  --color-accent: #aed1aa;
+  --color-accent-2: #9cd7cb;
+
+  --font-heading: "Delicious Handrawn", sans-serif;
+  --font-default: "Rubik", sans-serif;
+}
+
+body {
+  margin: 0;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  font-family: var(--font-default);
+}
+
+h1,
+h2 {
+  font-family: var(--font-heading);
+}

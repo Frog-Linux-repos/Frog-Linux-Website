@@ -1,0 +1,29 @@
+.button {
+  display: block;
+  padding: 2rem;
+  border-radius: 5rem;
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  text-decoration: none;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  transition: transform 0.2s;
+}
+
+.button:hover {
+  transform: translateY(-1rem);
+}
+
+.button:active {
+  transform: translateY(1rem);
+}
+
+.button.primary {
+  color: var(--color-bg);
+  background-color: var(--color-primary);
+}
+
+.button.secondary {
+  color: var(--color-text);
+  background-color: var(--color-secondary);
+}

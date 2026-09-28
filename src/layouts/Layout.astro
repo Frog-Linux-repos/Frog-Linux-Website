@@ -1,0 +1,56 @@
+---
+import "../styles/main.css";
+
+const {
+  title,
+  description = "",
+  site = "Frog Linux",
+  author = "FoxedDev",
+  locale = ["en", "US"],
+  themeColor = "#aed1aa",
+  icon = `${Astro.url.origin}/favicon.ico`,
+  image = `${Astro.url.origin}/thumbnail.png`,
+  url = `${Astro.url}`,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang={`${locale[0]}-${locale[1]}`}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content={author} />
+    <meta name="theme-color" content={themeColor} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" href={icon} type="image/x-icon" />
+
+    <!-- OpenGraph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={url} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site} />
+    <meta property="og:locale" content={`${locale[0]}_${locale[1]}`} />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

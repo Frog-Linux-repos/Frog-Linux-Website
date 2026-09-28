@@ -1,0 +1,187 @@
+<canvas id="pond"></canvas>
+
+<style>
+  #pond {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+</style>
+
+<script>
+  import Matter from "matter-js";
+
+  const Engine = Matter.Engine,
+    Render = Matter.Render,
+    Body = Matter.Body,
+    Bodies = Matter.Bodies,
+    Composite = Matter.Composite,
+    Runner = Matter.Runner;
+
+  const LILYPAD_TEXTURE_COUNT = 4;
+  const BORDER_DEPTH = 20;
+
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+
+  function makeLilypad(): Matter.Body {
+    const radius =
+      (0.5 + 0.5 * Math.random()) /* 0.5 - 1 */ * Math.sqrt(vw * vh) * 0.125;
+    const diameter = 2 * radius;
+    const position = {
+      x: (Math.random() - 0.5) * (vw - diameter),
+      y: (Math.random() - 0.5) * (vh - diameter),
+    };
+    const force = {
+      x: (Math.random() - 0.5) * 0.5,
+      y: (Math.random() - 0.5) * 0.5,
+    };
+    const textureId = Math.ceil(Math.random() * LILYPAD_TEXTURE_COUNT);
+    const texture = `/images/lilypads/${textureId}.svg`;
+    const textureScale = diameter / 100;
+
+    const lilypad = Bodies.circle(position.x, position.y, radius, {
+      render: {
+        sprite: {
+          texture: texture,
+          xScale: textureScale,
+          yScale: textureScale,
+        },
+      },
+      friction: 0,
+      frictionAir: 0.0001,
+      restitution: 1,
+    });
+    Body.applyForce(lilypad, { x: 0, y: 0 }, force);
+
+    return lilypad;
+  }
+
+  function makeFreddyLilypad(): Matter.Body {
+    const radius = Math.sqrt(vw * vh) * 0.15;
+    const force = {
+      x: (Math.random() - 0.5) * 0.5,
+      y: (Math.random() - 0.5) * 0.5,
+    };
+
+    const freddyLilypad = Bodies.circle(
+      0.5 * vw - radius - 64,
+      -0.5 * vh + radius + 64,
+      radius,
+      {
+        render: {
+          sprite: {
+            texture: "/images/freddy_lilypad.svg",
+            xScale: 384 / 100,
+            yScale: 384 / 100,
+          },
+        },
+      },
+    );
+    Body.applyForce(freddyLilypad, { x: 0, y: 0 }, force);
+
+    return freddyLilypad;
+  }
+
+  function makePond(canvas: HTMLCanvasElement) {
+    const engine = Engine.create({
+      gravity: { x: 0, y: 0 },
+    });
+    const world = engine.world;
+
+    const render = Render.create({
+      canvas: canvas,
+      engine: engine,
+      options: {
+        wireframes: false,
+        background: "transparent",
+        // showDebug: true,
+        // showPositions: true,
+      },
+    });
+    Render.run(render);
+
+    const runner = Runner.create();
+    Runner.run(runner, engine);
+
+    // Bodies
+
+    const lilypads: Matter.Body[] = [];
+    const lilypadCount = 3 + Math.ceil(Math.random() * 4);
+    for (let i = 0; i < lilypadCount; i++) {
+      lilypads.push(makeLilypad());
+    }
+    Composite.add(world, lilypads);
+
+    const freddyLilypad = makeFreddyLilypad();
+    Composite.add(world, freddyLilypad);
+
+    const borders: Matter.Body[] = [
+      Bodies.rectangle(
+        0.5 * (vw + BORDER_DEPTH),
+        0,
+        BORDER_DEPTH,
+        vh + 2 * BORDER_DEPTH,
+        {
+          isStatic: true,
+          render: {
+            fillStyle: "transparent",
+          },
+        },
+      ),
+      Bodies.rectangle(
+        0,
+        -0.5 * (vh + BORDER_DEPTH),
+        vw + 2 * BORDER_DEPTH,
+        BORDER_DEPTH,
+        {
+          isStatic: true,
+          render: {
+            fillStyle: "transparent",
+          },
+        },
+      ),
+      Bodies.rectangle(
+        -0.5 * (vw + BORDER_DEPTH),
+        0,
+        BORDER_DEPTH,
+        vh + 2 * BORDER_DEPTH,
+        {
+          isStatic: true,
+          render: {
+            fillStyle: "transparent",
+          },
+        },
+      ),
+      Bodies.rectangle(
+        0,
+        0.5 * (vh + BORDER_DEPTH),
+        vw + 2 * BORDER_DEPTH,
+        BORDER_DEPTH,
+        {
+          isStatic: true,
+          render: {
+            fillStyle: "transparent",
+          },
+        },
+      ),
+    ];
+    Composite.add(world, borders);
+
+    Render.setSize(render, vw, vh);
+    Render.lookAt(
+      render,
+      {
+        min: { x: -0.5 * vw, y: -0.5 * vh },
+        max: { x: 0.5 * vw, y: 0.5 * vh },
+      },
+      { x: 0, y: 0 },
+      // { x: 50, y: 50 },
+      true,
+    );
+  }
+
+  const pondCanvas = document.getElementById("pond");
+  if (pondCanvas instanceof HTMLCanvasElement) makePond(pondCanvas);
+</script>
