@@ -21,6 +21,14 @@ import Pond from "../components/Pond.astro";
       </div>
     </div>
   </header>
+  <main>
+    <section>
+      <div class="title">
+        <p>Not faster. Definitely less reliable.</p>
+        <h2>But it includes <u>frogs</u>.</h2>
+      </div>
+    </section>
+  </main>
 </Layout>
 
 <style>
@@ -39,27 +47,6 @@ import Pond from "../components/Pond.astro";
 
   .title h1 {
     font-size: 5rem;
-  }
-
-  .title u {
-    position: relative;
-    text-decoration: none;
-    text-wrap: nowrap;
-  }
-
-  .title u::before {
-    content: "";
-    background-image: url("/images/underline.svg");
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 100%;
-    left: 0;
-    pointer-events: none;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: top;
   }
 
   .title p {
