@@ -57,10 +57,13 @@
 
   function makeFreddyLilypad(): Matter.Body {
     const radius = (0.75 + 0.25 * Math.random()) * Math.sqrt(vw * vh) * 0.215;
+    const diameter = 2 * radius;
     const force = {
       x: (Math.random() - 0.5) * 0.5,
       y: (Math.random() - 0.5) * 0.5,
     };
+    const texture = "/images/freddy_lilypad.svg";
+    const textureScale = diameter / 100;
 
     const freddyLilypad = Bodies.circle(
       0.5 * vw - radius - 64,
@@ -69,9 +72,9 @@
       {
         render: {
           sprite: {
-            texture: "/images/freddy_lilypad.svg",
-            xScale: 384 / 100,
-            yScale: 384 / 100,
+            texture: texture,
+            xScale: textureScale,
+            yScale: textureScale,
           },
         },
         frictionAir: 0.001,
