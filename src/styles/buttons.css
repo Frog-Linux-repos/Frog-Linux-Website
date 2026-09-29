@@ -11,11 +11,11 @@
 }
 
 .button:hover {
-  transform: translateY(-1rem);
+  transform: translateY(-1.5rem);
 }
 
 .button:active {
-  transform: translateY(1rem);
+  transform: translateY(1.5rem);
 }
 
 .button.primary {
