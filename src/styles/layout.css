@@ -1,0 +1,8 @@
+header,
+section,
+footer {
+  display: flex;
+  flex-direction: column;
+  padding: calc(20px + 2.5vw);
+  box-sizing: border-box;
+}
