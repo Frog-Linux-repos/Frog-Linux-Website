@@ -6,8 +6,8 @@ import Pond from "../components/Pond.astro";
 <Layout title="Try Frog Linux">
   <Pond />
   <header>
-    <div class="title">
-      <div class="heading">
+    <div class="header">
+      <div class="title">
         <h1>Try <u>Frog Linux</u></h1>
         <p>
           What does the buzzword 'technologies' really mean? Think granular. Our
@@ -30,24 +30,24 @@ import Pond from "../components/Pond.astro";
     min-height: 100vh;
   }
 
-  .title {
+  .header {
     max-width: 48rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
   }
 
-  .heading h1 {
+  .title h1 {
     font-size: 5rem;
   }
 
-  .heading u {
+  .title u {
     position: relative;
     text-decoration: none;
     text-wrap: nowrap;
   }
 
-  .heading u::before {
+  .title u::before {
     content: "";
     background-image: url("/images/underline.svg");
     display: block;
@@ -62,7 +62,7 @@ import Pond from "../components/Pond.astro";
     background-position: top;
   }
 
-  .heading p {
+  .title p {
     font-size: 1.5rem;
   }
 
