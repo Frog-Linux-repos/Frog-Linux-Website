@@ -26,8 +26,7 @@
   const vh = window.innerHeight;
 
   function makeLilypad(): Matter.Body {
-    const radius =
-      (0.5 + 0.5 * Math.random()) /* 0.5 - 1 */ * Math.sqrt(vw * vh) * 0.125;
+    const radius = (0.5 + 0.5 * Math.random()) * Math.sqrt(vw * vh) * 0.125;
     const diameter = 2 * radius;
     const position = {
       x: (Math.random() - 0.5) * (vw - diameter),
