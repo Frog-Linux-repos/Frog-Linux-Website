@@ -48,9 +48,7 @@
           yScale: textureScale,
         },
       },
-      friction: 0,
-      frictionAir: 0.0001,
-      restitution: 1,
+      frictionAir: 0.001,
     });
     Body.applyForce(lilypad, { x: 0, y: 0 }, force);
 
@@ -76,6 +74,7 @@
             yScale: 384 / 100,
           },
         },
+        frictionAir: 0.001,
       },
     );
     Body.applyForce(freddyLilypad, { x: 0, y: 0 }, force);
