@@ -10,6 +10,13 @@
       "request": "launch",
       "command": "npm run dev",
       "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "node-terminal",
+      "name": "Run Script: preview",
+      "request": "launch",
+      "command": "npm run preview",
+      "cwd": "${workspaceFolder}"
     }
   ]
 }
