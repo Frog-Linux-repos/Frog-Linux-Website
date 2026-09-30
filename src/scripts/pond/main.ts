@@ -2,7 +2,12 @@ import { Composite, Engine, Render, Runner } from "matter-js";
 import { generateFreddyLilypad, generateLilypads } from "./lilypads";
 import { generateBorders } from "./borders";
 
-function startPond(composite: Composite, render: Render) {
+function stop(engine: Engine) {
+  // Clear bodies
+  Composite.clear(engine.world, false, true);
+}
+
+function run(engine: Engine, render: Render) {
   const w = window.innerWidth,
     h = window.innerHeight;
   const bounds = {
@@ -16,13 +21,12 @@ function startPond(composite: Composite, render: Render) {
     },
   };
 
-  // Bodies
-  Composite.clear(composite, false, true);
-  Composite.add(composite, generateLilypads(bounds));
-  Composite.add(composite, generateFreddyLilypad(bounds));
-  Composite.add(composite, generateBorders(bounds));
+  // Add bodies
+  Composite.add(engine.world, generateLilypads(bounds));
+  Composite.add(engine.world, generateFreddyLilypad(bounds));
+  Composite.add(engine.world, generateBorders(bounds));
 
-  // Size
+  // Set size
   Render.setSize(render, w, h);
   Render.lookAt(render, bounds, { x: 0, y: 0 }, true);
 }
@@ -51,9 +55,17 @@ export function makePond(canvas: HTMLCanvasElement) {
   let resizeTimeout: number | undefined = undefined;
 
   window.addEventListener("resize", () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => startPond(engine.world, render), 100);
+    if (resizeTimeout === undefined) {
+      stop(engine);
+    } else {
+      clearTimeout(resizeTimeout);
+    }
+
+    resizeTimeout = setTimeout(() => {
+      resizeTimeout = undefined;
+      run(engine, render);
+    }, 100);
   });
 
-  startPond(engine.world, render);
+  run(engine, render);
 }
