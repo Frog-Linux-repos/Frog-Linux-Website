@@ -1,4 +1,5 @@
 ---
+import { Font } from "astro:assets";
 import "../styles/main.css";
 
 const {
@@ -43,12 +44,8 @@ const {
     <meta name="twitter:image" content={image} />
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
-      rel="stylesheet"
-    />
+    <Font cssVariable="--font-heading" />
+    <Font cssVariable="--font-default" />
   </head>
   <body>
     <slot />

@@ -9,9 +9,6 @@
   --color-accent: #aed1aa;
   --color-accent-2: #9cd7cb;
 
-  --font-heading: "Delicious Handrawn", sans-serif;
-  --font-default: "Rubik", sans-serif;
-
   font-size: calc(10px + 0.5vw);
 }
 
