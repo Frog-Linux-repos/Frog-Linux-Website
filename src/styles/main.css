@@ -10,6 +10,7 @@
   --color-accent-2: #9cd7cb;
 
   font-size: calc(10px + 0.5vw);
+  scroll-behavior: smooth;
 }
 
 * {
