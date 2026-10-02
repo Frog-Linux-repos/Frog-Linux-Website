@@ -8,7 +8,7 @@ export default defineConfig({
   site: "https://frog-linux.com/",
   redirects: {
     "/github": "https://github.com/Frog-Linux-repos",
-    "/discord": "https://github.com/Frog-Linux-repos",
+    "/discord": "https://discord.gg/Zf6bnhzRXH",
     "/source": "https://github.com/Frog-Linux-repos/Frog-Linux-Website",
   },
   adapter: cloudflare(),
