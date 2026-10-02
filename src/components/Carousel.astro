@@ -4,11 +4,15 @@ import CarouselRightIcon from "../assets/icons/carousel/right.svg";
 ---
 
 <div class="carousel">
-  <button class="left button secondary"><CarouselLeftIcon /></button>
+  <button class="left button secondary">
+    <CarouselLeftIcon class="icon" />
+  </button>
   <div class="images">
     <slot />
   </div>
-  <button class="right button secondary"><CarouselRightIcon /></button>
+  <button class="right button secondary">
+    <CarouselRightIcon class="icon" />
+  </button>
 </div>
 
 <style>
