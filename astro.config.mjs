@@ -7,6 +7,8 @@ import cloudflare from "@astrojs/cloudflare";
 export default defineConfig({
   site: "https://frog-linux.com/",
   redirects: {
+    "/github": "https://github.com/Frog-Linux-repos",
+    "/discord": "https://github.com/Frog-Linux-repos",
     "/source": "https://github.com/Frog-Linux-repos/Frog-Linux-Website",
   },
   adapter: cloudflare(),
