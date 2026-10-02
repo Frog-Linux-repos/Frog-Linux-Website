@@ -2,6 +2,11 @@
 import Layout from "../layouts/Layout.astro";
 import Pond from "../components/Pond.astro";
 import DownloadIcon from "../assets/icons/download.svg";
+import Carousel from "../components/Carousel.astro";
+import { Image } from "astro:assets";
+import kdeScreenshot from "../assets/screenshots/kde.png";
+import niriScreenshot from "../assets/screenshots/niri.png";
+import cosmicScreenshot from "../assets/screenshots/cosmic.png";
 ---
 
 <Layout title="Try Frog Linux">
@@ -22,35 +27,41 @@ import DownloadIcon from "../assets/icons/download.svg";
       </div>
     </div>
   </header>
+  <main id="main">
+    <section>
+      <div class="title">
+        <p>Not faster. Definitely less reliable.</p>
+        <h2>But it includes <u>frogs</u>.</h2>
+      </div>
+      <Carousel>
+        <figure>
+          <Image
+            src={kdeScreenshot}
+            alt="Screenshot showing a stylized frog on a light green background and a taskbar at the bottom."
+          />
+          <figcaption>
+            It's basically KDE Plasma with a different wallpaper.
+          </figcaption>
+        </figure>
+        <figure>
+          <Image
+            src={niriScreenshot}
+            alt="Screenshot showing a stylized frog on a light green background and a taskbar at the left."
+          />
+          <figcaption>
+            Sorry, I mean Niri.
+          </figcaption>
+        </figure>
+        <figure>
+          <Image
+            src={cosmicScreenshot}
+            alt="Screenshot showing a stylized frog on a light green background and a taskbar at the bottom center."
+          />
+          <figcaption>
+            Or Cosmic? Wait, why are there so many options?
+          </figcaption>
+        </figure>
+      </Carousel>
+    </section>
+  </main>
 </Layout>
-
-<style>
-  header {
-    justify-content: end;
-    align-items: start;
-    min-height: 100vh;
-  }
-
-  .header {
-    max-width: 48rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  .title {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .title p {
-    font-size: 1.5rem;
-  }
-
-  .cta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-</style>

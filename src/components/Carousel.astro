@@ -1,0 +1,71 @@
+---
+import CarouselLeftIcon from "../assets/icons/carousel-left.svg";
+import CarouselRightIcon from "../assets/icons/carousel-right.svg";
+---
+
+<div class="carousel">
+  <button class="carousel-left button">
+    <CarouselLeftIcon />
+  </button>
+  <div class="images">
+    <slot />
+  </div>
+  <button class="carousel-right button">
+    <CarouselRightIcon />
+  </button>
+</div>
+
+<style>
+  .carousel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
+  .button {
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .button svg {
+    height: 5rem;
+  }
+
+  .images {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    width: auto;
+    max-width: 32rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    background-color: var(--color-bg);
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scrollbar-color: var(--color-accent-2) transparent;
+  }
+
+  .images :global(figure) {
+    width: 100%;
+    scroll-snap-align: center;
+  }
+
+  .images :global(img) {
+    width: auto;
+    height: auto;
+  }
+</style>
+
+<script>
+  import { makeCarousel } from "../scripts/carousel/main";
+
+  const carouselContainers = document.querySelectorAll("div.carousel");
+  carouselContainers.forEach((carouselContainer) => {
+    if (carouselContainer instanceof HTMLDivElement)
+      makeCarousel(carouselContainer);
+  });
+</script>

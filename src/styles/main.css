@@ -15,21 +15,14 @@
   font-size: calc(10px + 0.5vw);
 }
 
-body {
+* {
   margin: 0;
+}
+
+body {
   color: var(--color-text);
   background-color: var(--color-bg);
   font-family: var(--font-default);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin: 0;
 }
 
 h1,
@@ -55,7 +48,7 @@ u {
   text-wrap: nowrap;
 }
 
-*:has(> u) {
+:has(> u) {
   padding-bottom: 1.5rem;
 }
 

@@ -3,6 +3,8 @@
   align-items: center;
   padding: 2rem;
   gap: 1rem;
+  border: none;
+  cursor: pointer;
   border-radius: 5rem;
   font-family: var(--font-heading);
   font-size: 2.5rem;
