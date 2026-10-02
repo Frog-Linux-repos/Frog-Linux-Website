@@ -1,5 +1,6 @@
 @import url("layout.css");
 @import url("buttons.css");
+@import url("icons.css");
 
 :root {
   --color-text: #0d0b1b;
