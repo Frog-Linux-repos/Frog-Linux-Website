@@ -4,6 +4,12 @@ body {
   gap: 8rem;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+}
+
 header,
 section,
 footer {
