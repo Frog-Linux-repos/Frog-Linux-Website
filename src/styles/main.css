@@ -40,6 +40,11 @@ h2 {
   font-size: 4rem;
 }
 
+a {
+  text-decoration: underline;
+  color: var(--color-text);
+}
+
 u {
   position: relative;
   text-decoration: none;

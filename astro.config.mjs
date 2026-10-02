@@ -6,6 +6,9 @@ import cloudflare from "@astrojs/cloudflare";
 // https://astro.build/config
 export default defineConfig({
   site: "https://frog-linux.com/",
+  redirects: {
+    "/source": "https://github.com/Frog-Linux-repos/Frog-Linux-Website",
+  },
   adapter: cloudflare(),
   fonts: [
     {
