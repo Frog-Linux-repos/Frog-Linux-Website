@@ -1,37 +1,38 @@
 ---
-import CarouselLeftIcon from "../assets/icons/carousel-left.svg";
-import CarouselRightIcon from "../assets/icons/carousel-right.svg";
+import CarouselLeftIcon from "../assets/icons/carousel/left.svg";
+import CarouselRightIcon from "../assets/icons/carousel/right.svg";
 ---
 
 <div class="carousel">
-  <button class="carousel-left button">
-    <CarouselLeftIcon />
-  </button>
+  <button class="left button secondary"><CarouselLeftIcon /></button>
   <div class="images">
     <slot />
   </div>
-  <button class="carousel-right button">
-    <CarouselRightIcon />
-  </button>
+  <button class="right button secondary"><CarouselRightIcon /></button>
 </div>
 
 <style>
   .carousel {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
     gap: 2rem;
-    overflow-x: hidden;
-    max-width: 100%;
+    width: 100%;
+    max-width: 64rem;
+    position: relative;
   }
 
   .button {
-    padding: 0;
-    background-color: transparent;
+    position: absolute;
   }
 
-  .button svg {
-    height: 5rem;
+  .button.left {
+    left: 0;
+  }
+
+  .button.right {
+    right: 0;
   }
 
   .images {
@@ -40,10 +41,9 @@ import CarouselRightIcon from "../assets/icons/carousel-right.svg";
     align-items: center;
     gap: 2rem;
     width: auto;
-    max-width: 32rem;
-    border-radius: 1rem;
+    max-width: 48rem;
+    border-radius: 2rem;
     padding: 1rem;
-    background-color: var(--color-bg);
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     scrollbar-color: var(--color-accent-2) transparent;
@@ -57,6 +57,7 @@ import CarouselRightIcon from "../assets/icons/carousel-right.svg";
   .images :global(img) {
     width: auto;
     height: auto;
+    border-radius: 1rem;
   }
 </style>
 

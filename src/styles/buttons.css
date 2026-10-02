@@ -31,8 +31,3 @@
   color: var(--color-text);
   background-color: var(--color-secondary);
 }
-
-.button svg {
-  height: 2.5rem;
-  width: auto;
-}

@@ -9,9 +9,9 @@ function scrollCarousel(imageContainer: HTMLDivElement, value: number) {
 }
 
 export function makeCarousel(carousel: HTMLDivElement) {
-  const carouselLeftButton = carousel.querySelector("button.carousel-left");
+  const carouselLeftButton = carousel.querySelector("button.left");
   if (!(carouselLeftButton instanceof HTMLButtonElement)) throw CarouselError();
-  const carouselRightButton = carousel.querySelector("button.carousel-right");
+  const carouselRightButton = carousel.querySelector("button.right");
   if (!(carouselRightButton instanceof HTMLButtonElement))
     throw CarouselError();
   const imageContainer = carousel.querySelector("div.images");
