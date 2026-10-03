@@ -80,3 +80,11 @@ u::before {
   background-repeat: repeat-x;
   background-size: auto 3rem;
 }
+
+code {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+  padding: 0.25rem 0.5rem;
+  margin: 0.5rem;
+  display: inline-block;
+}
