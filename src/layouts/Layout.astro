@@ -43,6 +43,51 @@ const {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={image} />
 
+    <!-- Discord Embed -->
+    <script id="discord:component-embed" type="application/json">
+      {
+        "component": {
+          "type": 17,
+          "components": [
+            {
+              "type": 9,
+              "components": [
+                {
+                  "type": 10,
+                  "content": ""
+                }
+              ],
+              "accessory": {
+                "type": 11,
+                "media": {
+                  "url": "https://frog-linux.com/thumbnail.svg"
+                },
+                "description": "A stylized frog on a light green lily pad."
+              }
+            },
+            {
+              "type": 1,
+              "components": [
+                {
+                  "type": 2,
+                  "style": 1,
+                  "label": "Download",
+                  "url": "https://frog-linux.com/download"
+                },
+                {
+                  "type": 2,
+                  "style": 2,
+                  "label": "About",
+                  "url": "https://frog-linux.com/"
+                }
+              ]
+            }
+          ],
+          "accent_color": 11456938
+        }
+      }
+    </script>
+
     <!-- Fonts -->
     <Font cssVariable="--font-heading" />
     <Font cssVariable="--font-default" />
