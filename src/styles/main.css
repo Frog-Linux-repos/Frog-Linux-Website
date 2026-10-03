@@ -46,6 +46,19 @@ a {
   color: var(--color-text);
 }
 
+ol,
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+ol.no-marker,
+ul.no-marker {
+  padding: 0;
+  list-style: none;
+}
+
 u {
   position: relative;
   text-decoration: none;
