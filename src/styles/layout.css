@@ -14,12 +14,6 @@ footer {
   box-sizing: border-box;
 }
 
-header *,
-section *,
-footer * {
-  max-width: 56rem;
-}
-
 header {
   justify-content: end;
   align-items: start;
@@ -31,6 +25,7 @@ header {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  max-width: 48rem;
 }
 
 .title p {
@@ -44,9 +39,15 @@ header {
 }
 
 section {
+  align-self: center;
   align-items: center;
-  text-align: center;
+  width: 100%;
+  max-width: 64rem;
   gap: 4rem;
+}
+
+section .title {
+  text-align: center;
 }
 
 footer {
@@ -59,4 +60,8 @@ figure {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+figcaption {
+  text-align: center;
 }
