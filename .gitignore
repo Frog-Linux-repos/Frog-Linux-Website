@@ -1,6 +1,3 @@
-# [TEMP] old site version
-.old/
-
 # cloudflare wrangler output
 .wrangler
 
