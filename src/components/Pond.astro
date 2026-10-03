@@ -1,0 +1,17 @@
+<canvas id="pond"></canvas>
+
+<style>
+  #pond {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+</style>
+
+<script>
+  import { makePond } from "../scripts/pond/main";
+
+  const pondCanvas = document.getElementById("pond");
+  if (pondCanvas instanceof HTMLCanvasElement) makePond(pondCanvas);
+</script>

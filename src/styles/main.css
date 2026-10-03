@@ -1,0 +1,90 @@
+@import url("layout.css");
+@import url("buttons.css");
+@import url("icons.css");
+
+:root {
+  --color-text: #0d0b1b;
+  --color-bg: #e4fdff;
+  --color-primary: #808ac9;
+  --color-secondary: #dee2fe;
+  --color-accent: #aed1aa;
+  --color-accent-2: #9cd7cb;
+
+  font-size: calc(10px + 0.5vw);
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  font-family: var(--font-default);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+a {
+  text-decoration: underline;
+  color: var(--color-text);
+}
+
+ol,
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+ol.no-marker,
+ul.no-marker {
+  padding: 0;
+  list-style: none;
+}
+
+u {
+  position: relative;
+  text-decoration: none;
+  text-wrap: nowrap;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+u::before {
+  content: "";
+  background-image: url("/images/underline.svg");
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 3rem;
+  top: calc(100% - 1rem);
+  left: 0;
+  pointer-events: none;
+  background-repeat: repeat-x;
+  background-size: auto 3rem;
+}
+
+code {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+  padding: 0.25rem 0.5rem;
+  margin: 0.5rem;
+  display: inline-block;
+}

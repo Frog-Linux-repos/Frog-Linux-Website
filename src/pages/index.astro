@@ -1,0 +1,87 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Pond from "../components/Pond.astro";
+import DownloadIcon from "../assets/icons/download.svg";
+import Carousel from "../components/Carousel.astro";
+import { Image } from "astro:assets";
+import kdeScreenshot from "../assets/screenshots/kde.png";
+import niriScreenshot from "../assets/screenshots/niri.png";
+import cosmicScreenshot from "../assets/screenshots/cosmic.png";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Try Frog Linux">
+  <Pond />
+  <header>
+    <div class="title">
+      <h1>Try <u>Frog Linux</u></h1>
+      <p>
+        Frog Linux is a fancy and opinionated reskin of Arch Linux running on
+        the CachyOS kernel. It is basically Arch with KDE Plasma or COSMIC, a
+        GUI installer, some defaults I like, and more frog stuff than strictly
+        necessary. It is not trying to reinvent Linux.
+      </p>
+    </div>
+    <div class="cta">
+      <a href="/download" class="button primary">
+        Download
+        <DownloadIcon class="icon" />
+      </a>
+      <a href="#main" class="button secondary">About</a>
+    </div>
+  </header>
+  <main id="main">
+    <section>
+      <div class="title">
+        <p>Not faster. Definitely less reliable.</p>
+        <h2>But it includes <u>frogs</u>.</h2>
+      </div>
+      <Carousel>
+        <figure>
+          <Image
+            src={kdeScreenshot}
+            alt="Screenshot showing a stylized frog on a light green background and a taskbar at the bottom."
+          />
+          <figcaption>
+            It's basically KDE Plasma with a different wallpaper.
+          </figcaption>
+        </figure>
+        <figure>
+          <Image
+            src={niriScreenshot}
+            alt="Screenshot showing a stylized frog on a light green background and a taskbar at the left."
+          />
+          <figcaption>Sorry, I mean Niri.</figcaption>
+        </figure>
+        <figure>
+          <Image
+            src={cosmicScreenshot}
+            alt="Screenshot showing a stylized frog on a light green background and a taskbar at the bottom center."
+          />
+          <figcaption>
+            Or Cosmic? Wait, why are there so many options?
+          </figcaption>
+        </figure>
+      </Carousel>
+    </section>
+    <section>
+      <div class="title">
+        <h2>Share frog facts</h2>
+        <p>and potentially meet some silly people!</p>
+      </div>
+      <a href="/discord" class="button secondary">Join Discord </a>
+    </section>
+    <section>
+      <div class="title">
+        <p>You would</p>
+        <h2><u>never</u> disappoint the frogs.</h2>
+        <p>Right?</p>
+      </div>
+      <a href="/download" class="button primary">
+        Download
+        <DownloadIcon class="icon" />
+      </a>
+    </section>
+  </main>
+  <Footer />
+</Layout>
