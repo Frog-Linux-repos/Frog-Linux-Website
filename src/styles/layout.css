@@ -17,6 +17,7 @@ footer {
 header {
   justify-content: end;
   align-items: start;
+  min-height: 100vh;
   gap: 2rem;
 }
 
