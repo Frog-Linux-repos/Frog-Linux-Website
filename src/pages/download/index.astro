@@ -1,0 +1,51 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Pond from "../../components/Pond.astro";
+import DownloadIcon from "../../assets/icons/download.svg";
+import Footer from "../../components/Footer.astro";
+---
+
+<Layout title="Download Frog Linux">
+  <Pond />
+  <header>
+    <div class="title">
+      <h1>Downloads</h1>
+    </div>
+    <div class="cta">
+      <a href="https://frog.iaske.net/latest" class="button primary">
+        Download ISO
+        <DownloadIcon class="icon" />
+      </a>
+      <a href="#main" class="button secondary">More options</a>
+    </div>
+  </header>
+  <main id="main">
+    <section>
+      <div class="title">
+        <h2>Build from <u>source</u></h2>
+        <p>No idea why you would wanna do that, but that's up to you...</p>
+      </div>
+      <ol>
+        <li>
+          Clone the GitHub repository:
+          <code>
+            git clone https://github.com/Frog-Linux-repos/Frog-Linux
+          </code>
+        </li>
+        <li>
+          Download <a href="https://www.docker.com/">Docker</a> or <a
+            href="https://podman.io/">Podman</a
+          >.
+        </li>
+        <li>
+          Build the ISO using
+          <code>./scripts/build-local.sh</code>
+          on Linux / MacOS or
+          <code>./scripts/build-local.ps1</code>
+          on Windows. The ISO ends up in the <code>output</code> folder.
+        </li>
+      </ol>
+    </section>
+  </main>
+  <Footer />
+</Layout>
