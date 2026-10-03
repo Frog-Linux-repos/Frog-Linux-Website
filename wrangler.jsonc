@@ -2,7 +2,7 @@
   "$schema": "./node_modules/wrangler/config-schema.json",
   "compatibility_date": "2026-09-30",
   "compatibility_flags": ["global_fetch_strictly_public"],
-  "name": "frog-linux-website",
+  "name": "frog-linux",
   "main": "@astrojs/cloudflare/entrypoints/server",
   "assets": {
     "directory": "./dist",
