@@ -1,6 +1,17 @@
-# wrangler files
+# cloudflare wrangler output
 .wrangler
-.dev.vars*
-!.dev.vars.example
+
+# build output
+dist/
+
+# generated types
+.astro/
+
+# dependencies
+node_modules/
+
+# environment variables
 .env*
-!.env.example
+
+# macOS-specific files
+.DS_Store
