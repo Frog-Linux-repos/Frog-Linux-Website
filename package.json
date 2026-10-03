@@ -32,7 +32,7 @@
   "private": "true",
   "allowScripts": {
     "esbuild": true,
-    "workerd@1.20260926.1": true
+    "workerd": true
   },
   "devDependencies": {
     "@types/matter-js": "^0.20.2"
