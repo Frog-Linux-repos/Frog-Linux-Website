@@ -1,9 +1,4 @@
-body {
-  display: flex;
-  flex-direction: column;
-  gap: 8rem;
-}
-
+body,
 main {
   display: flex;
   flex-direction: column;
@@ -16,20 +11,12 @@ footer {
   display: flex;
   flex-direction: column;
   padding: calc(20px + 2.5vw);
-  gap: 2rem;
   box-sizing: border-box;
 }
 
 header {
   justify-content: end;
   align-items: start;
-  min-height: 100vh;
-}
-
-.header {
-  max-width: 48rem;
-  display: flex;
-  flex-direction: column;
   gap: 2rem;
 }
 
@@ -52,6 +39,13 @@ header {
 section {
   align-items: center;
   text-align: center;
+  gap: 4rem;
+}
+
+footer {
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
 }
 
 figure {

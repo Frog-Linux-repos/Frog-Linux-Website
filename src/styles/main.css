@@ -50,10 +50,8 @@ u {
   position: relative;
   text-decoration: none;
   text-wrap: nowrap;
-}
-
-:has(> u) {
-  padding-bottom: 1.5rem;
+  display: inline-block;
+  margin-bottom: 1rem;
 }
 
 u::before {

@@ -9,6 +9,7 @@
   font-family: var(--font-heading);
   font-size: 2.5rem;
   text-decoration: none;
+  text-wrap: nowrap;
   color: var(--color-text);
   background-color: var(--color-bg);
   transition: transform 0.2s;
