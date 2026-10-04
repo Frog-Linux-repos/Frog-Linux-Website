@@ -7,7 +7,7 @@ function makeLilypad(
   radius: number,
   force: Vector,
   texture: string,
-  textureSize: number = 100,
+  textureSize: number = 512,
 ): Body {
   const textureScale = (2 * radius) / textureSize;
 
