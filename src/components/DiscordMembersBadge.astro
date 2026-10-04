@@ -1,0 +1,14 @@
+<div class="discord-members-badge badge-container">
+  <span class="all-members badge"></span>
+  <span class="online-members badge"></span>
+</div>
+
+<script>
+  import { makeDiscordMembersBadge } from "../scripts/discordMembersBadge/main";
+
+  const badgeContainers = document.querySelectorAll(".discord-members-badge");
+  badgeContainers.forEach((badgeContainer) => {
+    if (badgeContainer instanceof HTMLDivElement)
+      makeDiscordMembersBadge(badgeContainer);
+  });
+</script>
