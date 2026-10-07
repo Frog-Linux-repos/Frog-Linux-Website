@@ -1,0 +1,22 @@
+.badge-container {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.badge {
+  background-color: var(--color-secondary);
+  border-radius: 0.25rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.badge:first-of-type {
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  padding-left: 1rem;
+}
+
+.badge:last-of-type {
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  padding-right: 1rem;
+}

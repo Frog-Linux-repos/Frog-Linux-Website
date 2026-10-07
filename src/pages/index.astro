@@ -5,9 +5,9 @@ import DownloadIcon from "../icons/download.svg";
 import Carousel from "../components/Carousel.astro";
 import { Image } from "astro:assets";
 import kdeScreenshot from "../assets/screenshots/kde.png";
-import niriScreenshot from "../assets/screenshots/niri (unused).png";
 import cosmicScreenshot from "../assets/screenshots/cosmic.png";
 import Footer from "../components/Footer.astro";
+import DiscordMembersBadge from "../components/DiscordMembersBadge.astro";
 ---
 
 <Layout title="Try Frog Linux">
@@ -18,11 +18,11 @@ import Footer from "../components/Footer.astro";
       <p>
         Frog Linux is a fancy and opinionated reskin of Arch Linux running on
         the CachyOS kernel. It is basically Arch with KDE Plasma or COSMIC, a
-        GUI installer, defaults chosen by our team, and more frog stuff than strictly
-        necessary. It is not trying to reinvent Linux.
+        GUI installer, defaults chosen by our team, and more frog stuff than
+        strictly necessary. It is not trying to reinvent Linux.
       </p>
     </div>
-    <div class="cta">
+    <div class="h-content">
       <a href="/download" class="button primary">
         Download
         <DownloadIcon class="icon" />
@@ -51,9 +51,7 @@ import Footer from "../components/Footer.astro";
             src={cosmicScreenshot}
             alt="Screenshot showing a stylized frog on a light green background and a taskbar at the bottom center."
           />
-          <figcaption>
-            Or Cosmic? Wait, why are there options?
-          </figcaption>
+          <figcaption>Or Cosmic? Wait, why are there options?</figcaption>
         </figure>
       </Carousel>
     </section>
@@ -62,7 +60,10 @@ import Footer from "../components/Footer.astro";
         <h2>Share frog facts</h2>
         <p>and potentially meet some silly people!</p>
       </div>
-      <a href="/discord" class="button secondary">Join Discord </a>
+      <div class="v-content">
+        <a href="/discord" class="button primary">Join Discord </a>
+        <DiscordMembersBadge />
+      </div>
     </section>
     <section>
       <div class="title">
