@@ -1,10 +1,12 @@
 const DiscordMembersBadgeError = (message?: string) =>
   Error(`Discord Members Badge Error${message ? `: ${message}` : ""}`);
 
-export async function getDiscordMembers(invite: string): Promise<{
+type MemberCount = {
   all: number;
   online: number;
-}> {
+};
+
+async function getMemberCount(invite: string): Promise<MemberCount> {
   const response = await fetch(
     `https://discord.com/api/v9/invites/${invite}?with_counts=true`,
   );
@@ -16,19 +18,20 @@ export async function getDiscordMembers(invite: string): Promise<{
   };
 }
 
+function generateBadge(text: string): HTMLSpanElement {
+  const badge = document.createElement("span");
+  badge.classList.add("badge");
+  badge.innerText = text;
+  return badge;
+}
+
 export async function makeDiscordMembersBadge(badgeContainer: HTMLDivElement) {
-  const allMembersBadge = badgeContainer.querySelector(".all-members");
-  if (!(allMembersBadge instanceof HTMLSpanElement))
-    throw DiscordMembersBadgeError();
-  const onlineMembersBadge = badgeContainer.querySelector(".online-members");
-  if (!(onlineMembersBadge instanceof HTMLSpanElement))
-    throw DiscordMembersBadgeError();
+  const infoBadge = badgeContainer.querySelector(".info");
+  if (!(infoBadge instanceof HTMLSpanElement)) throw DiscordMembersBadgeError();
 
-  allMembersBadge.innerText = `Loading`;
-  onlineMembersBadge.innerText = `members...`;
+  const memberCount = await getMemberCount("Zf6bnhzRXH");
 
-  const members = await getDiscordMembers("Zf6bnhzRXH");
-
-  allMembersBadge.innerText = `${members.all} members`;
-  onlineMembersBadge.innerText = `${members.online} online`;
+  infoBadge.remove();
+  badgeContainer.appendChild(generateBadge(`${memberCount.all} members`));
+  badgeContainer.appendChild(generateBadge(`${memberCount.online} online`));
 }
