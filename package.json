@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "^14.3.3",
-    "astro": "^7.3.5",
+    "astro": "^7.3.7",
     "matter-js": "^0.20.0",
     "wrangler": "^4.144.0"
   },
@@ -36,5 +36,8 @@
   },
   "devDependencies": {
     "@types/matter-js": "^0.20.2"
+  },
+  "overrides": {
+    "sharp": "^0.35.5"
   }
 }
