@@ -76,3 +76,9 @@ figure {
 figcaption {
   text-align: center;
 }
+
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
