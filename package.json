@@ -24,6 +24,7 @@
     "@astrojs/cloudflare": "^14.3.3",
     "astro": "^7.3.7",
     "matter-js": "^0.20.0",
+    "poly-decomp": "^0.3.0",
     "wrangler": "^4.144.0"
   },
   "engines": {

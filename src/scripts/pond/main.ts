@@ -1,6 +1,7 @@
 import { Composite, Engine, Render, Runner } from "matter-js";
-import { generateFreddyLilypad, generateLilypads } from "./lilypads";
-import { generateBorders } from "./borders";
+import { generateFreddyLilypad, generateLilypads, syncLilypadSprites } from "./lilypads";
+import { containLilypads, generateBorders } from "./borders";
+import { enableDragging } from "./drag";
 
 function stop(engine: Engine) {
   // Clear bodies
@@ -22,8 +23,8 @@ function run(engine: Engine, render: Render) {
   };
 
   // Add bodies
-  Composite.add(engine.world, generateLilypads(bounds));
-  Composite.add(engine.world, generateFreddyLilypad(bounds));
+  const freddy = generateFreddyLilypad(bounds);
+  Composite.add(engine.world, [...generateLilypads(bounds, [freddy]), freddy]);
   Composite.add(engine.world, generateBorders(bounds));
 
   // Set size
@@ -35,6 +36,8 @@ export function makePond(canvas: HTMLCanvasElement) {
   // Engine
   const engine = Engine.create({
     gravity: { x: 0, y: 0 },
+    positionIterations: 12,
+    velocityIterations: 8,
   });
 
   // Render
@@ -46,10 +49,11 @@ export function makePond(canvas: HTMLCanvasElement) {
       background: "transparent",
     },
   });
+  syncLilypadSprites(render);
   Render.run(render);
 
   // Runner
-  const runner = Runner.create();
+  const runner = Runner.create({ delta: 1000 / 240 });
   Runner.run(runner, engine);
 
   let resizeTimeout: number | undefined = undefined;
@@ -68,4 +72,6 @@ export function makePond(canvas: HTMLCanvasElement) {
   });
 
   run(engine, render);
+  enableDragging(engine, render);
+  containLilypads(engine, render.bounds);
 }
