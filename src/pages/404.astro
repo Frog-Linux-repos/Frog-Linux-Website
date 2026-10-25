@@ -1,0 +1,16 @@
+---
+import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
+import Pond from "../components/Pond.astro";
+export const prerender = true;
+---
+
+<Layout title="Page not found">
+    <Pond />
+    <section class="hero">
+        <h1>Lost in the <u>reeds</u></h1>
+        <p>That page doesn't exist.</p>
+        <a class="button" href="/">Back home</a>
+    </section>
+    <Footer />
+</Layout>
